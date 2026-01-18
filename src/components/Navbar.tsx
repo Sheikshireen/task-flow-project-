@@ -3,6 +3,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { CheckSquare, LogOut, Info, LayoutDashboard, User, Shield } from 'lucide-react';
+import ColorPaletteSwitcher from './ColorPaletteSwitcher';
 
 const ADMIN_EMAIL = 'sheik@gmail.com';
 
