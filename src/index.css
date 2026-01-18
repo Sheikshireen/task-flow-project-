@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Task Management System - Modern Teal-Indigo Design System */
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 224 71% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+
+    --primary: 173 80% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 243 75% 59%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 173 58% 95%;
+    --accent-foreground: 173 80% 25%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 173 80% 40%;
+
+    --radius: 0.75rem;
+
+    /* Gradient tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(173 80% 40%) 0%, hsl(243 75% 59%) 100%);
+    --gradient-subtle: linear-gradient(135deg, hsl(173 58% 95%) 0%, hsl(243 58% 95%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsla(0 0% 100% / 0.9) 0%, hsla(0 0% 100% / 0.7) 100%);
+
+    /* Shadow tokens */
+    --shadow-sm: 0 1px 2px 0 hsla(224 71% 4% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsla(224 71% 4% / 0.1), 0 2px 4px -2px hsla(224 71% 4% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsla(224 71% 4% / 0.1), 0 4px 6px -4px hsla(224 71% 4% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsla(224 71% 4% / 0.1), 0 8px 10px -6px hsla(224 71% 4% / 0.1);
+    --shadow-glow: 0 0 40px hsla(173 80% 40% / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 173 80% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 173 58% 95%;
+    --sidebar-accent-foreground: 173 80% 25%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 173 80% 40%;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 210 20% 98%;
+
+    --card: 224 71% 8%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 224 71% 8%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 173 80% 50%;
+    --primary-foreground: 224 71% 4%;
+
+    --secondary: 243 75% 65%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 224 71% 12%;
+    --muted-foreground: 220 9% 65%;
+
+    --accent: 173 40% 15%;
+    --accent-foreground: 173 80% 70%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 20% 98%;
+
+    --success: 142 76% 45%;
+    --success-foreground: 224 71% 4%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 224 71% 4%;
+
+    --border: 224 71% 15%;
+    --input: 224 71% 15%;
+    --ring: 173 80% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(173 80% 50%) 0%, hsl(243 75% 65%) 100%);
+    --gradient-subtle: linear-gradient(135deg, hsl(173 40% 15%) 0%, hsl(243 40% 15%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsla(224 71% 8% / 0.9) 0%, hsla(224 71% 8% / 0.7) 100%);
+
+    --sidebar-background: 224 71% 6%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 173 80% 50%;
+    --sidebar-primary-foreground: 224 71% 4%;
+    --sidebar-accent: 173 40% 15%;
+    --sidebar-accent-foreground: 173 80% 70%;
+    --sidebar-border: 224 71% 15%;
+    --sidebar-ring: 173 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-xl border border-white/10;
+  }
+
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-bg {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-border {
+    border: 1px solid transparent;
+    background: linear-gradient(var(--card), var(--card)) padding-box,
+                var(--gradient-primary) border-box;
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
